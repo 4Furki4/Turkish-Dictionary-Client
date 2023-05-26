@@ -2,8 +2,7 @@
 .search .search__input,
 .search .search__button,
 .part-of-speech::after,
-.definitions__body .sources::before,
-.card {
+.definitions__body .sources::before {
   transition: background-color 0.5s;
 }
 
@@ -20,7 +19,6 @@
 }
 
 .nav__dropdown__list__item,
-.definitions__body .synonym::before,
-.card {
+.definitions__body .synonym::before {
   transition: color 0.5s;
 }

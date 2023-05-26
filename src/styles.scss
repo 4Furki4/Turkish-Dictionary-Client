@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@use "../src/app/partials" as *;
+
 *,
 *::after,
 *::before {
@@ -6,16 +8,30 @@
 }
 
 :root {
-    --main-bg-color: #03001C;
-    --card-bg: #5B8FB9;
-    --main-text-color: #ECF8F9;
-    --primary-purple: #301E67;
+    --main-bg-color: #fffffff1;
+    --main-color: #0f0f0f;
+    --grey: #393E46;
+    --color-scheme: light;
+    --secondary-bg-color: #f5f5f5;
+    --primary-purple: rgb(165, 69, 239);
+    --font-family: sans-serif;
+    --card-bg: #3eb4bd;
+}
+
+
+.dark-mode {
+    --main-bg-color: #0f0f0f;
+    --main-color: #ECF8F9;
+    --secondary-bg-color: #1f1f1f;
+    --color-scheme: dark;
+    --card-bg: #022224;
 }
 
 body {
     margin: 0;
     padding: 0;
-    padding-inline: 1rem;
     background-color: var(--main-bg-color);
-    color: var(--main-text-color);
+    color: var(--main-color);
+    color-scheme: var(--color-scheme);
+    transition: background-color 0.5s, color 0.5s;
 }
