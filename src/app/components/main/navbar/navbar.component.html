@@ -1,1 +1,27 @@
-<p>navbar works!</p>
+<nav class="nav container">
+    <div class="nav--wrapper">
+        <div class="nav__logo">
+            <img src="../../../assets/svg/logo.svg" alt="" />
+        </div>
+        <div class="nav__settings">
+            <div class="nav__dropdown" tabindex="0" data-dropdown>
+                <div class="nav__dropdown__selected" data-dropdown-selected>
+                    <span id="selected__font" data-dropdown-selected>Sans Serif</span>
+                    <img src="../../../assets/svg/icon-arrow-down.svg" alt="" data-dropdown-selected />
+                </div>
+                <ul class="nav__dropdown__list">
+                    <li class="nav__dropdown__list__item">Sans Serif</li>
+                    <li class="nav__dropdown__list__item">Serif</li>
+                    <li class="nav__dropdown__list__item">Mono</li>
+                </ul>
+            </div>
+            <div class="nav__dark-toggler">
+                <label (click)="setDarkmode()" class="switch" tabindex="0">
+                    <input type="checkbox" />
+                    <span class="slider"></span>
+                </label>
+                <img src="../../../assets/svg/icon-moon.svg" height="25" alt="" />
+            </div>
+        </div>
+    </div>
+</nav>

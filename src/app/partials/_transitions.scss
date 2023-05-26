@@ -1,0 +1,26 @@
+.switch,
+.search .search__input,
+.search .search__button,
+.part-of-speech::after,
+.definitions__body .sources::before,
+.card {
+  transition: background-color 0.5s;
+}
+
+.nav {
+  transition: box-shadow 0.5s, background-color 0.5s;
+}
+
+.slider::after {
+  transition: transform 0.5s;
+}
+
+.search__input__validation-message {
+  transition: opacity 0.5s;
+}
+
+.nav__dropdown__list__item,
+.definitions__body .synonym::before,
+.card {
+  transition: color 0.5s;
+}

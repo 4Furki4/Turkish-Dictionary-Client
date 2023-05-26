@@ -1,0 +1,119 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--main-bg-color);
+    box-shadow: 0px 2px 3px var(--secondary-bg-color);
+    position: sticky;
+    top: 0;
+
+    &--wrapper {
+        width: min(98%, 900px);
+        margin-inline: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__settings {
+        margin-left: auto;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    &__dropdown {
+        padding: 0.25rem 1rem;
+        border-right: 1px solid rgba(117, 117, 117, 100%);
+        position: relative;
+        min-width: 150px;
+
+        &__selected {
+            text-align: center;
+            user-select: none;
+            cursor: pointer;
+
+            #selected__font {
+                margin-right: 0.5rem;
+            }
+        }
+
+        &__list {
+            list-style: none;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px var(--secondary-bg-color);
+            padding: 1rem 1.5rem;
+            right: 5px;
+            transform: scaleY(0);
+            opacity: 0;
+            transform-origin: top;
+            z-index: 99;
+            position: absolute;
+            background: var(--secondary-bg-color);
+            transition: transform 0.5s, opacity 0.5s;
+
+            &__item {
+                margin-bottom: 0.5rem;
+                display: block;
+                cursor: pointer;
+
+                &:hover {
+                    color: var(--primary-purple);
+                }
+            }
+        }
+
+        &__list.active {
+            display: grid;
+            transform: scaleY(1);
+            opacity: 1;
+            gap: 0.5rem;
+        }
+    }
+
+    &__dark-toggler {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .switch {
+        position: relative;
+        font-size: 17px;
+        display: inline-block;
+        width: 65px;
+        height: 26px;
+        border-radius: 100px;
+        background-color: #757575;
+
+        &:hover {
+            background-color: var(--primary-purple);
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        .slider {
+            position: absolute;
+            inset: 0;
+            cursor: pointer;
+
+            &::after {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border-radius: 100%;
+                inset: 0;
+                margin: auto 0;
+                transform: translateX(5px);
+                content: "";
+                background-color: var(--main-bg-color);
+            }
+        }
+
+        input:checked+.slider::after {
+            transform: translateX(40px);
+        }
+    }
+}
