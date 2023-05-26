@@ -1,0 +1,20 @@
+<div class="daily-word-and-phrase">
+    <div class="daily-word card" *ngFor="let kelime of words">
+        <h2>Bir Kelime</h2>
+        <h3 class="daily-word__title">
+            {{kelime.madde}}
+        </h3>
+        <div class="daily-word__definition">
+            {{kelime.anlam}}
+        </div>
+    </div>
+    <div class="daily-phrase card" *ngFor="let phrase of phrases">
+        <h2>Bir Deyim-Atasözü</h2>
+        <h3 class="daily-phrase__title">
+            {{phrase.madde}}
+        </h3>
+        <div class="daily-phrase__definition">
+            {{phrase.anlam}}
+        </div>
+    </div>
+</div>

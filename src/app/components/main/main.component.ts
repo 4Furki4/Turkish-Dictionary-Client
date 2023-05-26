@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Atasoz, Kelime } from 'src/app/models/home-content-response';
 import { HomeContentService } from 'src/app/services/home-content.service';
 
 @Component({
@@ -9,8 +10,12 @@ import { HomeContentService } from 'src/app/services/home-content.service';
 export class MainComponent implements OnInit {
   constructor(private homeContentService: HomeContentService) {
   }
+  kelime !: Kelime[]
+  atasoz !: Atasoz[];
   async ngOnInit(): Promise<void> {
     let data = await this.homeContentService.getHomeContent();
+    this.kelime = data.kelime;
+    this.atasoz = data.atasoz;
     console.log(data);
   }
 

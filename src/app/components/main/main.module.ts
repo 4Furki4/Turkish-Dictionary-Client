@@ -4,6 +4,8 @@ import { MainComponent } from './main.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchInputComponent } from './search-input/search-input.component';
 import { RouterModule } from '@angular/router';
+import { DailyWordAndPhraseComponent } from './daily-word-and-phrase/daily-word-and-phrase.component';
+
 
 
 
@@ -11,7 +13,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     MainComponent,
     NavbarComponent,
-    SearchInputComponent
+    SearchInputComponent,
+    DailyWordAndPhraseComponent
   ],
   imports: [
     CommonModule,

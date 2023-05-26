@@ -31,7 +31,10 @@ export interface Yabanci {
     kkarsilik: string;
     anlam: string;
 }
-
+export interface Kelime {
+    madde: string;
+    anlam: string;
+}
 export interface HomeContent {
     sayac: Sayac[];
     karistirma: Karistirma[];
@@ -39,5 +42,5 @@ export interface HomeContent {
     syyd: Syyd[];
     kural: Kural[];
     yabanci: Yabanci;
-    kelime: { madde: string; anlam: string; }[];
+    kelime: Kelime[];
 }

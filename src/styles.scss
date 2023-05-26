@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --main-bg-color: #03001C;
+    --card-bg: #5B8FB9;
+    --main-text-color: #ECF8F9;
+    --primary-purple: #301E67;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-inline: 1rem;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+}

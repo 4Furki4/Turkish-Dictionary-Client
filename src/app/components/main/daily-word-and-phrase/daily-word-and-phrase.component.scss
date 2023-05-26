@@ -1,0 +1,15 @@
+.daily-word-and-phrase{
+    display: grid;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.card{
+    h2{
+        margin-top: 0;
+        text-align: center;
+    }
+    padding: 1rem 2rem;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+}
