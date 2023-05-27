@@ -1,4 +1,4 @@
-<div class="daily-word-and-phrase">
+<!-- <div class="daily-word-and-phrase">
     <div class="daily-word card" *ngFor="let kelime of words">
         <h2>Bir Kelime</h2>
         <h3 class="daily-word__title">
@@ -15,6 +15,39 @@
         </h3>
         <div class="daily-phrase__definition">
             {{phrase.anlam}}
+        </div>
+    </div>
+</div> -->
+
+<div class="daily-word-and-phrase">
+    <div class="card">
+        <h2 class="card__title">Bir Kelime</h2>
+        <div class="card--inner">
+            <div class="card__front">
+                <h2>
+                    {{words[0].madde}}
+                </h2>
+            </div>
+            <div class="card__back">
+                <p>
+                    {{words[0].anlam}}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <h2 class="card__title">Bir Deyim-Atasözü</h2>
+        <div class="card--inner">
+            <div class="card__front">
+                <h2>
+                    {{phrases[0].madde}}
+                </h2>
+            </div>
+            <div class="card__back">
+                <p>
+                    {{phrases[0].anlam}}
+                </p>
+            </div>
         </div>
     </div>
 </div>
