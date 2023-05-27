@@ -1,1 +1,5 @@
-<p>definition works!</p>
+<div *ngIf="response">
+    <div *ngFor="let kelimeAnlam of response.anlamlarListe">
+        {{kelimeAnlam.anlam}}
+    </div>
+</div>

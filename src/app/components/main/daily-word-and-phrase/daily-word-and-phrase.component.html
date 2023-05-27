@@ -1,51 +1,30 @@
-<!-- <div class="daily-word-and-phrase">
-    <div class="daily-word card" *ngFor="let kelime of words">
-        <h2>Bir Kelime</h2>
-        <h3 class="daily-word__title">
-            {{kelime.madde}}
-        </h3>
-        <div class="daily-word__definition">
-            {{kelime.anlam}}
-        </div>
-    </div>
-    <div class="daily-phrase card" *ngFor="let phrase of phrases">
-        <h2>Bir Deyim-Atasözü</h2>
-        <h3 class="daily-phrase__title">
-            {{phrase.madde}}
-        </h3>
-        <div class="daily-phrase__definition">
-            {{phrase.anlam}}
-        </div>
-    </div>
-</div> -->
-
 <div class="daily-word-and-phrase">
     <div class="card">
         <h2 class="card__title">Bir Kelime</h2>
-        <div class="card--inner">
+        <div class="card--inner" *ngFor="let word of words">
             <div class="card__front">
                 <h2>
-                    {{words[0].madde}}
+                    {{word.madde}}
                 </h2>
             </div>
             <div class="card__back">
                 <p>
-                    {{words[0].anlam}}
+                    {{word.anlam}}
                 </p>
             </div>
         </div>
     </div>
     <div class="card">
         <h2 class="card__title">Bir Deyim-Atasözü</h2>
-        <div class="card--inner">
+        <div class="card--inner" *ngFor="let phrase of phrases">
             <div class="card__front">
                 <h2>
-                    {{phrases[0].madde}}
+                    {{phrase.madde}}
                 </h2>
             </div>
             <div class="card__back">
                 <p>
-                    {{phrases[0].anlam}}
+                    {{phrase.anlam}}
                 </p>
             </div>
         </div>
