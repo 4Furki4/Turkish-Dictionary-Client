@@ -1,5 +1,9 @@
-<div *ngIf="response">
-    <div *ngFor="let kelimeAnlam of response.anlamlarListe">
-        {{kelimeAnlam.anlam}}
+<ng-container *ngIf="word$ | async as word">
+    <div *ngFor="let word of word$|async">
+        <ul>
+            <li *ngFor="let item of word.anlamlarListe">
+                <p>{{ item.anlam }}</p>
+            </li>
+        </ul>
     </div>
-</div>
+</ng-container>

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Atasoz, Kelime } from 'src/app/models/home-content-response';
-import { HomeContentService } from 'src/app/services/home-content.service';
+import { Component, OnInit } from "@angular/core";
+import { Kelime, Atasoz } from "src/app/models/home-content-response";
+import { HomeContentService } from "src/app/services/home-content.service";
 
 @Component({
   selector: 'sozluk-main',
