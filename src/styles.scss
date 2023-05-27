@@ -8,7 +8,7 @@
 }
 
 :root {
-    --main-bg-color: #fffffff1;
+    --main-bg-color: #EEEEEE;
     --main-color: #0f0f0f;
     --grey: #393E46;
     --color-scheme: light;
@@ -21,7 +21,7 @@
 
 .dark-mode {
     --main-bg-color: #0f0f0f;
-    --main-color: #ECF8F9;
+    --main-color: #EEEEEE;
     --secondary-bg-color: #1f1f1f;
     --color-scheme: dark;
     --card-bg: #022224;
@@ -33,5 +33,5 @@ body {
     background-color: var(--main-bg-color);
     color: var(--main-color);
     color-scheme: var(--color-scheme);
-    transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.5s ease-out, color 0.5s ease-out;
 }

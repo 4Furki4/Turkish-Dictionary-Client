@@ -1,1 +1,16 @@
-<p>search-input works!</p>
+{{wordInput}}
+<section class="search container">
+    <form (ngSubmit)="onSubmit()" #searchForm="ngForm" class="search__form">
+        <label class="search__label" for="word">
+            <input #input="ngModel" required [(ngModel)]="wordInput" name="word" id="input_word" class="search__input"
+                type="text" placeholder="Search for any word..." />
+            <button [disabled]="!isInputValid" type="submit" class="search__button">
+                <img src="../../../../assets/svg/icon-search.svg" alt="" />
+            </button>
+            <span class="search__input__validation-message" [ngClass]="{'search__input__validation-message--hidden': (isInputValid || input.untouched),
+                    'search__input__validation-message--visible': !(isInputValid || input.untouched)}">Provide
+                value
+                please</span>
+        </label>
+    </form>
+</section>

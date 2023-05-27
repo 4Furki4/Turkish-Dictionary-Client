@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { map, switchMap } from 'rxjs';
 import { WordRequestService } from 'src/app/services/word-request.service';
 
 @Component({
@@ -7,17 +8,13 @@ import { WordRequestService } from 'src/app/services/word-request.service';
   templateUrl: './definition.component.html',
   styleUrls: ['./definition.component.scss']
 })
-export class DefinitionComponent implements OnInit {
-  constructor(private requestWord: WordRequestService, private router: ActivatedRoute) { }
-  word!: string;
-  ngOnInit(): void {
-    this.router.paramMap.subscribe(async (param) => {
-      this.word = param.get('word')!
-      let response = await this.requestWord.getWordMeaning(this.word)
-      console.log(response);
-    })
+export class DefinitionComponent {
+  private readonly wordService = inject(WordRequestService);
+  private readonly router = inject(ActivatedRoute);
 
-  }
-
+  word$ = this.router.paramMap.pipe(
+    map((param) => param.get('word')!),
+    switchMap((word) => this.wordService.getWordMeaning(word))
+  );
 
 }

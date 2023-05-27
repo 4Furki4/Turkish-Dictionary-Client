@@ -1,0 +1,68 @@
+.search {
+    margin-top: 4rem;
+
+    &__label {
+        position: relative;
+    }
+
+    &__button {
+        position: absolute;
+        border: 0;
+        bottom: 7.5px;
+        transform: translateY(50%);
+        background-color: transparent;
+        right: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        z-index: 0;
+    }
+
+    &__input {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        width: 100%;
+        border: 0;
+        outline: none;
+        padding: clamp(1rem, 2vw, 1.25rem);
+        background-color: var(--secondary-bg-color);
+        border-radius: 10px;
+        position: relative;
+
+        &:focus::placeholder {
+            position: absolute;
+            transform: translateY(-17px);
+        }
+
+        &::placeholder {
+            transition: transform 0.5s;
+        }
+
+        &:focus {
+            outline: 2px solid var(--main-color);
+        }
+
+        &.ng-invalid.ng-touched {
+            outline: 2px solid red;
+        }
+
+        &--invalid {
+            outline: 2px solid red;
+        }
+
+        &__validation-message {
+            position: absolute;
+            inset: 0;
+            color: red;
+            font-style: italic;
+            font-weight: 700;
+            margin-top: 3rem;
+
+            &--hidden {
+                opacity: 0;
+            }
+
+            &--visible {
+                opacity: 1;
+            }
+        }
+    }
+}

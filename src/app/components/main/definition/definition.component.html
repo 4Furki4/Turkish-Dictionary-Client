@@ -1,1 +1,9 @@
-<p>definition works!</p>
+<ng-container *ngIf="word$ | async as word">
+    <div *ngFor="let word of word$|async">
+        <ul>
+            <li *ngFor="let item of word.anlamlarListe">
+                <p>{{ item.anlam }}</p>
+            </li>
+        </ul>
+    </div>
+</ng-container>
