@@ -9,9 +9,8 @@ import { WordRequestService } from 'src/app/services/word-request.service';
   styleUrls: ['./definition.component.scss']
 })
 export class DefinitionComponent {
-  private readonly wordService = inject(WordRequestService);
-  private readonly router = inject(ActivatedRoute);
-
+  constructor(private wordService: WordRequestService, private router: ActivatedRoute) {
+  }
   word$ = this.router.paramMap.pipe(
     map((param) => param.get('word')!),
     switchMap((word) => this.wordService.getWordMeaning(word))
