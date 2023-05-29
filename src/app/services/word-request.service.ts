@@ -1,15 +1,14 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { environment } from '../environments/environment';
-import { Observable, firstValueFrom, map } from 'rxjs';
 import { WordResponse } from '../models/word-response';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WordRequestService {
-  constructor(private client: HttpClient) { }
-  getWordMeaning = (word: string) =>
+  private readonly client = inject(HttpClient);
+  requestWordMeaning = (word: string) =>
     this.client
       .get<WordResponse[]>(`${environment.apiUrl}/gts?ara=${word}`)
 }

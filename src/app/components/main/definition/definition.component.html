@@ -1,9 +1,35 @@
 <ng-container *ngIf="word$ | async as word">
-    <div *ngFor="let word of word$|async">
-        <ul>
-            <li *ngFor="let item of word.anlamlarListe">
-                <p>{{ item.anlam }}</p>
-            </li>
-        </ul>
+    <div class="container definition" *ngFor="let word of (word$|async); let wordIndex = index">
+        <h1>
+            {{word.madde}}
+        </h1>
+        <p>
+            <i *ngIf="word.cogul_mu === '1'">
+                Çokluk,
+            </i>
+            <span *ngIf="word.telaffuz">
+                ({{word.telaffuz}}),
+            </span>
+            <span>
+                {{word.lisan}}
+            </span>
+        </p>
+        <ng-container *ngFor="let anlam of anlamList[wordIndex]; let i = index">
+            <p>
+                {{anlam}}
+                <i *ngIf="word.ozel_mi === '1'">
+                    özel
+                </i>
+            </p>
+            <p>{{ word.anlamlarListe[i].anlam }}</p>
+            <ng-container *ngIf="word.anlamlarListe[i].orneklerListe">
+                <q>
+                    {{word.anlamlarListe[i].orneklerListe[0].ornek}}
+                </q>
+                <span *ngFor="let yazar of word.anlamlarListe[i].orneklerListe[0].yazar">
+                    - {{yazar.tam_adi}}
+                </span>
+            </ng-container>
+        </ng-container>
     </div>
 </ng-container>
