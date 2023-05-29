@@ -7,9 +7,10 @@
     box-shadow: 0px 2px 3px var(--secondary-bg-color);
     position: sticky;
     top: 0;
+    z-index: 99;
 
     &--wrapper {
-        width: min(98%, 900px);
+        width: min(98%, 1200px);
         margin-inline: auto;
         display: flex;
         flex-direction: row;

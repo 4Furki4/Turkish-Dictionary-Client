@@ -1,35 +1,49 @@
+<!-- <ngx-spinner type="ball-8bits" color="371B58" name="mySpinner"></ngx-spinner> -->
+<ngx-spinner type="ball-scale-multiple" name="scale">
+</ngx-spinner>
 <ng-container *ngIf="word$ | async as word">
-    <div class="container definition" *ngFor="let word of (word$|async); let wordIndex = index">
-        <h1>
-            {{word.madde}}
-        </h1>
-        <p>
-            <i *ngIf="word.cogul_mu === '1'">
-                Çokluk,
-            </i>
-            <span *ngIf="word.telaffuz">
-                ({{word.telaffuz}}),
-            </span>
-            <span>
-                {{word.lisan}}
-            </span>
-        </p>
-        <ng-container *ngFor="let anlam of anlamList[wordIndex]; let i = index">
-            <p>
-                {{anlam}}
-                <i *ngIf="word.ozel_mi === '1'">
-                    özel
-                </i>
-            </p>
-            <p>{{ word.anlamlarListe[i].anlam }}</p>
-            <ng-container *ngIf="word.anlamlarListe[i].orneklerListe">
-                <q>
-                    {{word.anlamlarListe[i].orneklerListe[0].ornek}}
-                </q>
-                <span *ngFor="let yazar of word.anlamlarListe[i].orneklerListe[0].yazar">
-                    - {{yazar.tam_adi}}
-                </span>
+    <div [@sliding]="word ? 'void' : 'sliding-in'" class="container definition">
+        <div *ngFor="let word of (word$|async); let wordIndex = index">
+            <div>
+                <h1 class="definition__title">
+                    {{word.madde }}
+                </h1>
+                <p>
+                    <i *ngIf="word.cogul_mu === '1'">
+                        Çokluk,
+                    </i>
+                    <i *ngIf="word.telaffuz">
+                        ({{word.telaffuz}}),
+                    </i>
+                    <i>
+                        {{word.lisan}}
+                    </i>
+                </p>
+            </div>
+            <ng-container *ngFor="let anlam of anlamList[wordIndex]; let i = index">
+                <div class="definition__meaning">
+                    <ng-container *ngIf="word.anlamlarListe[i]">
+                        <span>
+                            {{i+1}}.
+                            <i>{{anlam}}</i>
+                            <i *ngIf="word.ozel_mi === '1'">
+                                <span>, özel</span>
+                            </i>
+                            {{ word.anlamlarListe[i].anlam }}
+                        </span>
+                        <ng-container *ngIf="word.anlamlarListe[i].orneklerListe">
+                            <div class="definition__example">
+                                <q>
+                                    {{word.anlamlarListe[i].orneklerListe[0].ornek}}
+                                </q>
+                                <span *ngFor="let yazar of word.anlamlarListe[i].orneklerListe[0].yazar">
+                                    - {{yazar.tam_adi}}
+                                </span>
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                </div>
             </ng-container>
-        </ng-container>
+        </div>
     </div>
 </ng-container>

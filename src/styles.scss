@@ -35,3 +35,9 @@ body {
     color-scheme: var(--color-scheme);
     transition: background-color 0.5s ease-out, color 0.5s ease-out;
 }
+
+.container {
+    width: min(1200px, 80%);
+    margin-inline: auto;
+    margin-top: 2rem;
+}
