@@ -17,16 +17,15 @@
         }
 
         padding: 1rem;
-
-        // &:not(:last-child) {
-        //     border-bottom: 1px solid var(--main-bg-color);
-        // }
-
         border-bottom: 2px solid var(--main-bg-color);
     }
 
     &__example {
         font-size: clamp(1rem, 5vw, 1.5rem);
+        text-align: center;
+    }
+
+    &--error {
         text-align: center;
     }
 }

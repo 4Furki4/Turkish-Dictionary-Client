@@ -1,6 +1,6 @@
-<ng-container *ngIf="word$">
-    <div class="container definition">
-        <div *ngFor="let word of (word$|async); let wordIndex = index">
+<ng-container *ngIf="words && wordErrorResponse.error === ''">
+    <div @enterFadeInTransition [@render]="isRendering ? 'onRendering'  : 'onRender'" class="container definition">
+        <div *ngFor="let word of words; let wordIndex = index">
             <div>
                 <h1 class="definition__title">
                     {{word.madde }}
@@ -42,5 +42,11 @@
                 </div>
             </ng-container>
         </div>
+    </div>
+</ng-container>
+<ng-container class="definition" *ngIf="wordErrorResponse.error !== ''">
+    <div @enterFadeInTransition [@render]="isRendering ? 'onRendering'  : 'onRender'"
+        class="definition definition--error container">
+        {{wordErrorResponse.error}}
     </div>
 </ng-container>
