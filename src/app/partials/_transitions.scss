@@ -1,13 +1,19 @@
 .switch,
 .search .search__input,
-.search .search__button,
-.part-of-speech::after,
-.definitions__body .sources::before {
+.search .search__button {
   transition: background-color 0.5s ease-out;
 }
 
 .nav {
   transition: box-shadow 0.5s ease-out, background-color 0.5s ease-out;
+}
+
+.definition {
+  transition: box-shadow 0.5s ease-out, background-color 0.5s ease-out;
+
+  &__meaning {
+    transition: border-color .5s ease-out;
+  }
 }
 
 .slider::after {
@@ -18,7 +24,6 @@
   transition: opacity 0.5s ease-out;
 }
 
-.nav__dropdown__list__item,
-.definitions__body .synonym::before {
+.nav__dropdown__list__item {
   transition: color 0.5s ease-out;
 }
