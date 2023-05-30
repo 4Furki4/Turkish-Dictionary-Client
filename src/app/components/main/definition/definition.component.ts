@@ -6,13 +6,13 @@ import { WordErrorResponse } from 'src/app/models/word-error-response';
 import { WordResponse } from 'src/app/models/word-response';
 import { WordRequestService } from 'src/app/services/word-request.service';
 const fadeIn = trigger('render', [
-  state('onRendering', style({ opacity: 0, transform: 'translateX(100%)', })),
+  state('onRendering', style({ opacity: 0, transform: 'translateX(20%)', })),
   state('onRender', style({ opacity: 1, transform: 'translateX(0%)' })),
   transition('onRendering => onRender', animate('500ms ease-in-out')),
 ])
 const EnterFadeInTransition = trigger('enterFadeInTransition', [
   transition(':enter', [
-    style({ opacity: 0, transform: 'translateX(100%)', }),
+    style({ opacity: 0, transform: 'translateX(20%)', }),
     animate('500ms ease-in-out', style({ opacity: 1, transform: 'translateX(0%)' })),
   ])
 ])
