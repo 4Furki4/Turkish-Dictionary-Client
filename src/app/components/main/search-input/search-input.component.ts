@@ -15,8 +15,7 @@ export class SearchInputComponent {
   wordInput!: string;
   wordResponse !: Array<WordResponse>;
   async onSubmit() {
-
-    this.route.navigate([`${this.wordInput}`])
+    this.route.navigate([`${this.wordInput.toLowerCase()}`])
   }
   @HostListener('window:keydown.enter', ['$event'])
   onEnter(event: KeyboardEvent) {

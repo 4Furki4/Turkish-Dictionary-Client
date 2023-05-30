@@ -1,34 +1,21 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NgxSpinnerService } from 'ngx-spinner';
 import { Observable, map, switchMap } from 'rxjs';
 import { WordResponse } from 'src/app/models/word-response';
 import { WordRequestService } from 'src/app/services/word-request.service';
-
+const fadeIn = trigger('render', [
+  state('onRendering', style({ opacity: 0, transform: 'translateX(-100%)' })),
+  state('onRender', style({ opacity: 1, transform: 'translateX(0%)' })),
+  transition('onRendering => onRender', animate('1000ms ease-in-out'))
+])
 
 //sliding animation
 @Component({
   selector: 'sozluk-definition',
   templateUrl: './definition.component.html',
   styleUrls: ['./definition.component.scss'],
-  animations: [
-    trigger('sliding', [
-      state('sliding', style({
-        transform: 'translateX(-100%)'
-      })),
-      state('sliding-out', style({
-        transform: 'translateX(100%)'
-      }
-      )),
-      state('sliding-in', style({
-        transform: 'translateX(0%)'
-      }
-      )),
-      transition('void => sliding', animate(0)),
-      transition('sliding => sliding-out', animate(250)),
-    ])
-  ]
+  animations: [fadeIn]
 })
 export class DefinitionComponent implements OnInit {
   ngOnInit(): void {
@@ -36,19 +23,20 @@ export class DefinitionComponent implements OnInit {
   }
   private wordService: WordRequestService = inject(WordRequestService);
   private activatedRoute: ActivatedRoute = inject(ActivatedRoute);
-  private spinner: NgxSpinnerService = inject(NgxSpinnerService);
   anlamList: Array<string[]> = [];
   searchedWord !: string;
+  isRendering: boolean = true;
+  word !: WordResponse[];
+
   word$: Observable<WordResponse[]> = this.activatedRoute.paramMap.pipe(
     map((param) => param.get('word')!),
     switchMap((word) => {
+      word = word.toLowerCase()
+      this.searchedWord = this.searchedWord?.toLowerCase()
       if (word === this.searchedWord) { }
       return this.wordService.requestWordMeaning(word)
     }),
     map((httpResponse) => {
-      this.spinner.show('scale', {
-        type: 'ball-scale-multiple'
-      })
       this.anlamList = new Array<string[]>()
       httpResponse.forEach((wordResponse, index) => {
         this.searchedWord = wordResponse.madde
@@ -62,7 +50,7 @@ export class DefinitionComponent implements OnInit {
         }
         this.anlamList.push(anlamOzellikListe)
       })
-      this.spinner.hide('scale', 250)
+      this.isRendering = false
       return httpResponse;
     })
   );
