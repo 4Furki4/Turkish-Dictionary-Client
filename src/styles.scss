@@ -13,7 +13,7 @@
     --grey: #393E46;
     --color-scheme: light;
     --secondary-bg-color: #f5f5f5;
-    --primary-purple: rgb(165, 69, 239);
+    --primary-purple: #a545ef;
     --font-family: sans-serif;
     --card-bg: #3eb4bd;
 }
@@ -34,4 +34,10 @@ body {
     color: var(--main-color);
     color-scheme: var(--color-scheme);
     transition: background-color 0.5s ease-out, color 0.5s ease-out;
+}
+
+.container {
+    width: min(1200px, 90%);
+    margin-inline: auto;
+    margin-top: 2rem;
 }
