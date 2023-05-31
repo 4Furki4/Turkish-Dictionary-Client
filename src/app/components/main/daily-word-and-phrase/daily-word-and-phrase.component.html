@@ -1,4 +1,4 @@
-<div class="daily-word-and-phrase container">
+<div *ngIf="words && phrases" class="daily-word-and-phrase container">
     <div @enterSlideInRight class="card">
         <h2 class="card__title">Bir Kelime</h2>
         <div class="card--inner" *ngFor="let word of words">

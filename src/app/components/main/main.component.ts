@@ -12,10 +12,16 @@ export class MainComponent implements OnInit {
   }
   kelime !: Kelime[]
   atasoz !: Atasoz[];
-  async ngOnInit(): Promise<void> {
-    let data = await this.homeContentService.getHomeContent();
-    this.kelime = data.kelime;
-    this.atasoz = data.atasoz;
+  ngOnInit(): void {
+    this.homeContentService.getHomeContent().subscribe({
+      next: (data) => {
+        this.atasoz = data.atasoz;
+        this.kelime = data.kelime;
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    })
   }
 
 }
