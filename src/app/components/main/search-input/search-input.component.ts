@@ -15,12 +15,14 @@ export class SearchInputComponent {
   wordInput!: string;
   wordResponse !: Array<WordResponse>;
   async onSubmit() {
-    this.route.navigate([`${this.wordInput.toLowerCase()}`])
+    let cleansedWord = this.wordInput.toLowerCase().trim()
+    this.route.navigate([`${cleansedWord}`])
   }
   @HostListener('window:keydown.enter', ['$event'])
   onEnter(event: KeyboardEvent) {
     if (event.target instanceof HTMLInputElement) {
-      // when word searched by pressing enter on input element, submit the form and change the focus so that input validation error doesn't appear when not focused
+      // when word searched by pressing enter on input element,
+      //submit the form and change the focus so that input validation error message and invalid input state doesn't appear when not focused
       this.onSubmit()
       event.target.blur()
       this.searchForm.reset()
