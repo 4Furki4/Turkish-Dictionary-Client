@@ -1,5 +1,5 @@
 <div class="daily-word-and-phrase container">
-    <div class="card">
+    <div @enterSlideInRight class="card">
         <h2 class="card__title">Bir Kelime</h2>
         <div class="card--inner" *ngFor="let word of words">
             <div class="card__word">
@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-    <div class="card">
+    <div @enterSlideInLeft class="card">
         <h2 class="card__title">Bir Deyim-Atasözü</h2>
         <div class="card--inner" *ngFor="let phrase of phrases">
             <div class="card__word">
