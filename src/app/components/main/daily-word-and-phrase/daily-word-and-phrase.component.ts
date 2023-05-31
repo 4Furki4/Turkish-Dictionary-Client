@@ -4,13 +4,13 @@ import { Kelime, Atasoz } from 'src/app/models/home-content-response';
 const enterSlideInRight = trigger('enterSlideInRight', [
   transition(':enter', [
     style({ opacity: 0, transform: 'translateX(-10%)' }),
-    animate('750ms ease-in-out', style({ opacity: 1, transform: 'translateX(0)' }))
+    animate('750ms ease-out', style({ opacity: 1, transform: 'translateX(0)' }))
   ])
 ]);
 const enterSlideInLeft = trigger('enterSlideInLeft', [
   transition(':enter', [
     style({ opacity: 0, transform: 'translateX(10%)' }),
-    animate('750ms ease-in-out', style({ opacity: 1, transform: 'translateX(0%)' }))
+    animate('750ms ease-out', style({ opacity: 1, transform: 'translateX(0%)' }))
   ])
 ])
 @Component({
