@@ -5,7 +5,7 @@
                 [@animateShadow]="(input.pristine && input.untouched) ? 'neutral' : (isInputValueValid && input.dirty) ? 'valid' : 'invalid'"
                 #input="ngModel" required [(ngModel)]="wordInput" name="word" id="input_word" class="search__input"
                 type="text" placeholder="Merak ettiğiniz kelimeyi giriniz..." />
-            <button [disabled]="!isInputValueValid" type="submit" class="search__button">
+            <button [disabled]="!isInputValueValid" (click)="onSubmit()" class="search__button">
                 <img src="../../../../assets/svg/icon-search.svg" alt="" />
             </button>
             <span class="search__input__validation-message" [ngClass]="{'search__input__validation-message--hidden': (isInputValueValid || input.untouched),
