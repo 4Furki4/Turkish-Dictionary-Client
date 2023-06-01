@@ -11,7 +11,7 @@ const shadowAnimation = trigger('animateShadow', [
     boxShadow: '0 0 0 0.2rem rgb(255,0,0)'
   })),
   state('neutral', style({
-    boxShadow: '0 0 10px 1px var(--grey)'
+    boxShadow: '0 0 10px 1px var(--primary-shadow-color)'
   })),
   transition('valid <=> invalid, invalid <=> neutral, neutral <=> valid', [
     animate('250ms ease-out')
