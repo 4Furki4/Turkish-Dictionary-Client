@@ -16,6 +16,10 @@
         border-radius: 10px;
         cursor: pointer;
         z-index: 0;
+
+        &:disabled {
+            cursor: auto;
+        }
     }
 
     &__input {
@@ -24,7 +28,6 @@
         border: 0;
         outline: none;
         padding: clamp(1rem, 2vw, 1.25rem);
-        background-color: var(--secondary-bg-color);
         border-radius: 10px;
         position: relative;
 
@@ -37,25 +40,14 @@
             transition: transform 0.5s;
         }
 
-        &:focus {
-            outline: 2px solid var(--main-color);
-        }
-
-        &.ng-invalid.ng-touched {
-            outline: 2px solid red;
-        }
-
-        &--invalid {
-            outline: 2px solid red;
-        }
-
         &__validation-message {
             position: absolute;
             inset: 0;
             color: red;
             font-style: italic;
             font-weight: 700;
-            margin-top: 3rem;
+            font-size: 1.25rem;
+            transform: translate(.25rem, 2.65rem);
 
             &--hidden {
                 opacity: 0;
