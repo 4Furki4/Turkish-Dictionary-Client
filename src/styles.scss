@@ -16,6 +16,8 @@
     --primary-purple: #a545ef;
     --font-family: sans-serif;
     --card-bg: #3eb4bd;
+    --primary-shadow-color: var(--grey);
+
 }
 
 
@@ -25,6 +27,7 @@
     --secondary-bg-color: #1f1f1f;
     --color-scheme: dark;
     --card-bg: #022224;
+    --primary-shadow-color: var(--secondary-bg-color);
 }
 
 body {
