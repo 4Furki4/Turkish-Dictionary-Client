@@ -1,6 +1,7 @@
 .search {
     z-index: 0;
     margin-top: 4rem;
+    margin-bottom: 2.5rem;
 
     &__label {
         position: relative;
@@ -45,9 +46,9 @@
             inset: 0;
             color: red;
             font-style: italic;
-            font-weight: 700;
-            font-size: 1.25rem;
-            transform: translate(.25rem, 2.65rem);
+            font-weight: bold;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            transform: translate(.25rem, clamp(2.45rem, 4vw, 2.55rem));
 
             &--hidden {
                 opacity: 0;
