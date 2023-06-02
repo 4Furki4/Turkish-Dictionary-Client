@@ -3,8 +3,8 @@
     flex-direction: row;
     align-items: center;
     padding: 1rem;
-    background-color: var(--main-bg-color);
-    box-shadow: 0px 1px 10px 0px var(--primary-shadow-color);
+    background-color: var(--navbar-bg);
+    box-shadow: var(--navbar-shadow);
     position: sticky;
     top: 0;
     z-index: 99;
@@ -43,7 +43,7 @@
         &__list {
             list-style: none;
             border-radius: 10px;
-            box-shadow: 0px 0px 5px var(--secondary-bg-color);
+            // box-shadow: 0px 0px 5px var(--primary-shadow-color);
             padding: 1rem 1.5rem;
             right: 5px;
             transform: scaleY(0);

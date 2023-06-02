@@ -8,26 +8,30 @@
 }
 
 :root {
-    --main-bg-color: #EEEEEE;
+    --main-bg-color: rgba(238, 238, 238, 97%);
     --main-color: #0f0f0f;
     --grey: #393E46;
     --color-scheme: light;
     --secondary-bg-color: #f5f5f5;
     --primary-purple: #a545ef;
     --font-family: sans-serif;
-    --card-bg: #3eb4bd;
     --primary-shadow-color: var(--grey);
-
+    --card-shadow: none;
+    --navbar-shadow: 0px 1px 5px 0px var(--primary-shadow-color);
+    --navbar-bg: var(--main-bg-color);
+    --radius-size: 10px;
 }
 
 
 .dark-mode {
     --main-bg-color: #0f0f0f;
-    --main-color: #EEEEEE;
+    --main-color: rgba(238, 238, 238, 87%);
     --secondary-bg-color: #1f1f1f;
     --color-scheme: dark;
-    --card-bg: #022224;
     --primary-shadow-color: var(--secondary-bg-color);
+    --card-shadow: none;
+    --navbar-shadow: 0px 1px 1px 0px var(--primary-shadow-color);
+    --navbar-bg: var(--main-bg-color);
 }
 
 body {
@@ -42,5 +46,4 @@ body {
 .container {
     width: min(1200px, 90%);
     margin-inline: auto;
-    margin-top: 2rem;
 }

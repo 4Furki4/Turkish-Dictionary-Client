@@ -14,7 +14,7 @@
         transform: translateY(50%);
         background-color: transparent;
         right: 20px;
-        border-radius: 10px;
+        border-radius: var(--radius-size);
         cursor: pointer;
         z-index: 0;
 

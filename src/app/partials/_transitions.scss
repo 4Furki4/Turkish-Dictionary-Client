@@ -9,7 +9,7 @@
 }
 
 .definition {
-  transition: box-shadow 0.5s ease-out, background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out, color .5s ease-out;
 
   &__meaning {
     transition: border-color .5s ease-out;
@@ -17,10 +17,10 @@
 }
 
 .card {
-  transition: box-shadow .5s ease-out;
+  transition: background-color .5s ease-out;
 
   &__title {
-    transition: border .5s ease-out;
+    transition: border .5s ease-out, color .5s ease-out;
   }
 }
 
@@ -33,6 +33,14 @@
   transition: opacity 0.25s ease-out;
 }
 
-.nav__dropdown__list__item {
-  transition: color 0.5s ease-out;
+.nav__dropdown {
+  transition: background-color .5s ease-out;
+}
+
+.nav__dropdown__list {
+  transition: background-color .5s ease-out;
+
+  &__item {
+    transition: color 0.5s ease-out;
+  }
 }
