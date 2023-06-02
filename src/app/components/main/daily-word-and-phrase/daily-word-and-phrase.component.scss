@@ -5,6 +5,7 @@
     justify-content: space-around;
     margin-top: 4rem;
     margin-bottom: 4rem;
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
 }
 
 .card {
@@ -17,7 +18,7 @@
     &__title {
         margin: 0;
         padding-bottom: 10px;
-        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        // font-size: clamp(1.5rem, 5vw, 2.5rem);
         font-weight: 700;
         background: -webkit-linear-gradient(45deg, var(--primary-purple) 10%, var(--main-color)90%);
         background-clip: text;
@@ -25,8 +26,8 @@
         border-bottom: 2px solid var(--main-bg-color);
     }
 
-    &__word {
-        font-size: clamp(1.25rem, 3vw, 2rem);
+    &__definition {
+        font-size: clamp(1.25rem, 5vw, 1.5rem);
     }
 }
 
