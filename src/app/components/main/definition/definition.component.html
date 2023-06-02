@@ -2,7 +2,7 @@
     <div @enterFadeInTransition [@render]="isRendering ? 'onRendering'  : 'onRender'" class="container definition">
         <div *ngFor="let word of words; let wordIndex = index">
             <div>
-                <h1 class="definition__title">
+                <h1 class="definition__title" [ngClass]="{'definition__title--first':wordIndex===0}">
                     {{word.madde }}
                 </h1>
                 <p>
@@ -18,7 +18,8 @@
                 </p>
             </div>
             <ng-container *ngFor="let anlam of anlamList[wordIndex]; let i = index">
-                <div class="definition__meaning">
+                <div class="definition__meaning"
+                    [ngClass]="{'definition__meaning--single':word.anlamlarListe.length ===1}">
                     <ng-container *ngIf="word.anlamlarListe[i]">
                         <span>
                             {{i+1}}.

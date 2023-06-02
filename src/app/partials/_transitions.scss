@@ -11,6 +11,10 @@
 .definition {
   transition: background-color 0.5s ease-out, color .5s ease-out;
 
+  &__title {
+    transition: border .5s ease-out;
+  }
+
   &__meaning {
     transition: border-color .5s ease-out;
   }
