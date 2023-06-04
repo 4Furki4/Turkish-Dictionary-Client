@@ -31,6 +31,7 @@ export class DefinitionComponent implements OnInit {
 
   private wordService: WordRequestService = inject(WordRequestService);
   private activatedRoute: ActivatedRoute = inject(ActivatedRoute);
+  isRendering: boolean = true;
   words !: WordResponse[];
   wordErrorResponse = new WordErrorResponse();
   anlamList: Array<string[]> = [];
@@ -41,11 +42,12 @@ export class DefinitionComponent implements OnInit {
       word = word.toLowerCase()
       return of(word)
     })).subscribe((word) => {
-      this.wordService.requestWordMeaning(word).subscribe({
-        next: (response: WordResponse[] | WordErrorResponse) => this.loadWordDefinition(response),
+      this.wordService.requestWordMeaning(word).subscribe((response: WordResponse[] | WordErrorResponse) => {
+        this.loadWordDefinition(response)
+        this.isRendering = false
       })
     })
-  isRendering: boolean = true;
+
   loadWordDefinition(response: WordResponse[] | WordErrorResponse) {
     if ((response as WordErrorResponse).error) {
       this.wordErrorResponse.error = (response as WordErrorResponse).error;
@@ -67,6 +69,5 @@ export class DefinitionComponent implements OnInit {
       })
       this.words = response
     }
-    this.isRendering = false
   }
 }
