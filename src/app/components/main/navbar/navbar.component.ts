@@ -1,30 +1,25 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
 
 @Component({
   selector: 'sozluk-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit, AfterViewInit {
   constructor() { }
-
+  ngAfterViewInit(): void {
+  }
+  @ViewChild('selected__font', { static: true }) selectedFontSpan!: HTMLSpanElement;
   ngOnInit(): void {
     const selectedFontSpan = document.querySelector("#selected__font")!
-    const navDropdownListItems = document.querySelectorAll(
-      ".nav__dropdown__list__item"
-    )!;
     this.checkDarkMode()
     let fontFamilyLocalStorage = localStorage.getItem("selectedFontFamily")
     if (fontFamilyLocalStorage) {
-      selectedFontSpan.textContent = fontFamilyLocalStorage
+      this.selectedFontSpan.textContent = fontFamilyLocalStorage
       this.setSelectedFontFamily(fontFamilyLocalStorage, selectedFontSpan);
     }
-    navDropdownListItems.forEach((listItem) => {
-      listItem.addEventListener("click", () => {
-        this.setSelectedFontFamily(listItem.textContent!, selectedFontSpan)
-      })
-    })
   }
+
   setDarkmode() {
     const darkModeSwitchCheck: HTMLInputElement = document.querySelector('input[type="checkbox"]')!
     if (darkModeSwitchCheck.checked) {
@@ -49,19 +44,20 @@ export class NavbarComponent {
     }
   }
   setSelectedFontFamily(selectedFontFamily: string, fontSpan: Element) {
+
     if (selectedFontFamily === "Mono") {
-      document.documentElement.style.setProperty("--font-family", "Inconsolata");
+      document.documentElement.style.setProperty("--font-family", "Mono");
       fontSpan.textContent = "Mono";
       localStorage.setItem("selectedFontFamily", selectedFontFamily);
     }
-    else if (selectedFontFamily === "Sans Serif") {
-      document.documentElement.style.setProperty("--font-family", "Inter");
-      fontSpan.textContent = "Sans Serif";
+    else if (selectedFontFamily === "Roboto Mono") {
+      document.documentElement.style.setProperty("--font-family", "Roboto Mono");
+      fontSpan.textContent = "Roboto Mono";
       localStorage.setItem("selectedFontFamily", selectedFontFamily);
     }
     else {
-      document.documentElement.style.setProperty("--font-family", "Lora");
-      fontSpan.textContent = "Serif";
+      document.documentElement.style.setProperty("--font-family", "Inconsolata");
+      fontSpan.textContent = "Inconsolata";
       localStorage.setItem("selectedFontFamily", selectedFontFamily);
     }
   }

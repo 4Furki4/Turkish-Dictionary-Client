@@ -5,6 +5,7 @@
 *::after,
 *::before {
     box-sizing: border-box;
+    font-family: var(--font-family);
 }
 
 :root {
@@ -46,4 +47,86 @@ body {
 .container {
     width: min(1200px, 90%);
     margin-inline: auto;
+}
+
+@font-face {
+    font-family: 'Roboto Mono', monospace;
+    src: local("Roboto Mono") url("./assets/fonts/Roboto_Mono/static/RobotoMono-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Mono', monospace;
+    src: local("Roboto Mono") url("./assets/fonts/Roboto_Mono/static/RobotoMono-MediumItalic.ttf") format("truetype");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Mono', monospace;
+    src: local("Roboto Mono") url("./assets/fonts/Roboto_Mono/static/RobotoMono-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Mono', monospace;
+    src: local("Roboto Mono") url("./assets/fonts/Roboto_Mono/static/RobotoMono-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Mono', monospace;
+    src: local("Roboto Mono") url("./assets/fonts/Roboto_Mono/static/RobotoMono-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Mono', monospace;
+    src: local("Roboto Mono") url("./assets/fonts/Roboto_Mono/static/RobotoMono-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Mono', monospace;
+    src: local("Roboto Mono") url("./assets/fonts/Roboto_Mono/static/RobotoMono-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto Mono', monospace;
+    src: local("Roboto Mono") url("./assets/fonts/Roboto_Mono/static/RobotoMono-LightItalic.ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Inconsolata;
+    font-style: normal;
+    font-weight: 400;
+    src: local(Inter),
+        url(./assets/fonts/Inconsolata/Inconsolata-Regular.ttf) format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Inconsolata;
+    font-style: normal;
+    font-weight: 700;
+    src: local(Inter),
+        url(./assets/fonts/Inconsolata/Inconsolata-Bold.ttf) format("truetype");
+    font-display: swap;
 }
