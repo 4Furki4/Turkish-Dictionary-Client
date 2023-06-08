@@ -1,28 +1,25 @@
-import { AfterViewInit, Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'sozluk-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit, AfterViewInit {
-  constructor() { }
-  ngAfterViewInit(): void {
-  }
+export class NavbarComponent implements OnInit {
+  constructor(private renderer: Renderer2) { }
   @ViewChild('selected__font', { static: true }) selectedFontSpan!: HTMLSpanElement;
+  @ViewChild('darkModeCheckbox', { static: true }) darkModeCheckbox!: ElementRef<HTMLInputElement>;
   ngOnInit(): void {
-    const selectedFontSpan = document.querySelector("#selected__font")!
     this.checkDarkMode()
     let fontFamilyLocalStorage = localStorage.getItem("selectedFontFamily")
     if (fontFamilyLocalStorage) {
       this.selectedFontSpan.textContent = fontFamilyLocalStorage
-      this.setSelectedFontFamily(fontFamilyLocalStorage, selectedFontSpan);
+      this.setSelectedFontFamily(fontFamilyLocalStorage, this.selectedFontSpan);
     }
   }
 
-  setDarkmode() {
-    const darkModeSwitchCheck: HTMLInputElement = document.querySelector('input[type="checkbox"]')!
-    if (darkModeSwitchCheck.checked) {
+  setDarkmode(checkbox: HTMLInputElement) {
+    if (checkbox.checked) {
       this.enableDarkMode();
     } else {
       this.disableDarkMode();
@@ -37,22 +34,21 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     localStorage.setItem("darkMode", "disabled");
   }
   checkDarkMode() {
-    const darkModeSwitchCheck: HTMLInputElement = document.querySelector('input[type="checkbox"]')!
     if (localStorage.getItem("darkMode") === "enabled") {
       this.enableDarkMode();
-      darkModeSwitchCheck.checked = true;
+      this.darkModeCheckbox.nativeElement.checked = true;
     }
   }
   setSelectedFontFamily(selectedFontFamily: string, fontSpan: Element) {
 
-    if (selectedFontFamily === "Mono") {
-      document.documentElement.style.setProperty("--font-family", "Mono");
-      fontSpan.textContent = "Mono";
+    if (selectedFontFamily === "Roboto") {
+      document.documentElement.style.setProperty("--font-family", "Roboto");
+      fontSpan.textContent = selectedFontFamily;
       localStorage.setItem("selectedFontFamily", selectedFontFamily);
     }
     else if (selectedFontFamily === "Roboto Mono") {
       document.documentElement.style.setProperty("--font-family", "Roboto Mono");
-      fontSpan.textContent = "Roboto Mono";
+      fontSpan.textContent = selectedFontFamily;
       localStorage.setItem("selectedFontFamily", selectedFontFamily);
     }
     else {
