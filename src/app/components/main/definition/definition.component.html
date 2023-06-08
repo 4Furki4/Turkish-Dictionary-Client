@@ -23,10 +23,10 @@
                     <ng-container *ngIf="word.anlamlarListe[i]">
                         <span>
                             {{i+1}}.
-                            <i>{{anlam}}</i>
+                            <i *ngIf="anlam">{{anlam}}:</i>
                             <i *ngIf="word.ozel_mi === '1'">
                                 <span>, özel</span>
-                            </i>:
+                            </i>
                             {{ word.anlamlarListe[i].anlam }}
                         </span>
                         <ng-container *ngIf="word.anlamlarListe[i].orneklerListe">
