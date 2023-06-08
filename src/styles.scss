@@ -5,6 +5,7 @@
 *::after,
 *::before {
     box-sizing: border-box;
+
 }
 
 :root {
@@ -41,6 +42,7 @@ body {
     color: var(--main-color);
     color-scheme: var(--color-scheme);
     transition: background-color 0.5s ease-out, color 0.5s ease-out;
+    font-family: var(--font-family);
 }
 
 .container {

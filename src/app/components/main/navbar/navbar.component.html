@@ -8,18 +8,21 @@
         <div class="nav__settings">
             <div class="nav__dropdown" tabindex="0" data-dropdown>
                 <div class="nav__dropdown__selected" data-dropdown-selected>
-                    <span id="selected__font" data-dropdown-selected>Sans Serif</span>
+                    <span #selected__font id="selected__font" data-dropdown-selected>Inconsolata</span>
                     <img src="../../../assets/svg/icon-arrow-down.svg" alt="" data-dropdown-selected />
                 </div>
                 <ul class="nav__dropdown__list">
-                    <li class="nav__dropdown__list__item">Sans Serif</li>
-                    <li class="nav__dropdown__list__item">Serif</li>
-                    <li class="nav__dropdown__list__item">Mono</li>
+                    <li #sans__serif (click)="setSelectedFontFamily(sans__serif.textContent!, selected__font)"
+                        class="nav__dropdown__list__item">Inconsolata</li>
+                    <li #roboto__mono #nav__dropdown__list__item class="nav__dropdown__list__item"
+                        (click)="setSelectedFontFamily(roboto__mono.textContent!, selected__font)">Roboto Mono</li>
+                    <li #roboto class="nav__dropdown__list__item"
+                        (click)="setSelectedFontFamily(roboto.textContent!, selected__font)">Roboto</li>
                 </ul>
             </div>
             <div class="nav__dark-toggler">
-                <label (click)="setDarkmode()" class="switch" tabindex="0">
-                    <input type="checkbox" />
+                <label (click)="setDarkmode(darkModeCheckbox)" class="switch" tabindex="0">
+                    <input #darkModeCheckbox type="checkbox" />
                     <span class="slider"></span>
                 </label>
                 <img src="../../../assets/svg/icon-moon.svg" height="25" alt="" />
