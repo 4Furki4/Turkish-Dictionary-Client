@@ -7,14 +7,14 @@ import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/co
 })
 export class NavbarComponent implements OnInit {
   constructor(private renderer: Renderer2) { }
-  @ViewChild('selected__font', { static: true }) selectedFontSpan!: HTMLSpanElement;
+  @ViewChild('selected__font', { static: true }) selectedFontSpan!: ElementRef<HTMLSpanElement>;
   @ViewChild('darkModeCheckbox', { static: true }) darkModeCheckbox!: ElementRef<HTMLInputElement>;
   ngOnInit(): void {
     this.checkDarkMode()
     let fontFamilyLocalStorage = localStorage.getItem("selectedFontFamily")
     if (fontFamilyLocalStorage) {
-      this.selectedFontSpan.textContent = fontFamilyLocalStorage
-      this.setSelectedFontFamily(fontFamilyLocalStorage, this.selectedFontSpan);
+      this.selectedFontSpan.nativeElement.textContent = fontFamilyLocalStorage
+      this.setSelectedFontFamily(fontFamilyLocalStorage, this.selectedFontSpan.nativeElement);
     }
   }
 
