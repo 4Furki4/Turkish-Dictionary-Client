@@ -1,10 +1,17 @@
 .definition {
     padding-inline: clamp(.25rem, 2vw, 1rem);
+    padding-block: clamp(1rem, 2vw, 4rem);
     box-shadow: var(--card-shadow);
     background-color: var(--secondary-bg-color);
     font-size: clamp(1rem, 5vw, 1.75rem);
     border-radius: var(--radius-size);
     color: var(--main-color);
+
+    &__title,
+    &__example,
+    &--error {
+        text-align: center;
+    }
 
     &__item {
         &:not(:first-child) {
@@ -13,30 +20,21 @@
     }
 
     &__title {
-        padding: .5rem;
         margin: 0;
-        text-align: center;
+        padding-bottom: .5rem;
     }
 
     &__types {
         padding: 0rem 1rem;
-        margin: .5rem 0rem;
+        margin: 0;
     }
 
     &__meaning {
-        >* {
-            margin: 1rem 0 1rem 0;
-        }
-
-        padding: 1rem;
+        margin-block: 2rem;
     }
 
     &__example {
-        font-size: clamp(1rem, 5vw, 1.5rem);
-        text-align: center;
-    }
-
-    &--error {
-        text-align: center;
+        font-size: clamp(.5rem, 4vw, 1.5rem);
+        margin: .25rem 1rem 1rem 1rem;
     }
 }
