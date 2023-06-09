@@ -10,13 +10,13 @@ import { HomeContentService } from "src/app/services/home-content.service";
 export class MainComponent implements OnInit {
   constructor(private homeContentService: HomeContentService) {
   }
-  kelime !: Kelime[]
-  atasoz !: Atasoz[];
+  kelime !: Kelime
+  atasoz !: Atasoz;
   ngOnInit(): void {
     this.homeContentService.getHomeContent().subscribe({
       next: (data) => {
-        this.atasoz = data.atasoz;
-        this.kelime = data.kelime;
+        this.atasoz = data.atasoz[0];
+        this.kelime = data.kelime[0];
       },
       error: (err) => {
         console.log(err);
