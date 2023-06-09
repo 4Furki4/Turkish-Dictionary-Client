@@ -4,7 +4,7 @@
         <div class="card--inner">
             <div class="card__word">
                 <h3>
-                    <a [routerLink]="word.madde">{{word.madde}}</a>
+                    <a (click)="scrollToTop()" [routerLink]="word.madde">{{word.madde}}</a>
                 </h3>
             </div>
             <div class="card__definition">
@@ -19,7 +19,7 @@
         <div class="card--inner">
             <div class="card__word">
                 <h3>
-                    <a [routerLink]="phrase.madde">{{phrase.madde}}</a>
+                    <a (click)="scrollToTop()" [routerLink]="phrase.madde">{{phrase.madde}}</a>
                 </h3>
             </div>
             <div class="card__definition">
