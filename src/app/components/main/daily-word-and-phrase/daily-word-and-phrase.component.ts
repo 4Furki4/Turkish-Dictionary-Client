@@ -1,5 +1,5 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, Input } from '@angular/core';
+import { Component, Host, HostListener, Input } from '@angular/core';
 import { Kelime, Atasoz } from 'src/app/models/home-content-response';
 const enterSlideInRight = trigger('enterSlideInRight', [
   transition(':enter', [
@@ -22,6 +22,15 @@ const enterSlideInLeft = trigger('enterSlideInLeft', [
 export class DailyWordAndPhraseComponent {
   constructor() {
 
+  }
+  position: number = 0;
+  scrollToTop() {
+    const isPortrait = window.innerWidth < window.innerHeight;
+    if (isPortrait) {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }, 100)
+    }
   }
   @Input('kelime') word!: Kelime
   @Input('atasozu') phrase!: Atasoz;
