@@ -23,6 +23,6 @@ export class DailyWordAndPhraseComponent {
   constructor() {
 
   }
-  @Input('kelime') words!: Kelime[]
-  @Input('atasozu') phrases!: Atasoz[];
+  @Input('kelime') word!: Kelime
+  @Input('atasozu') phrase!: Atasoz;
 }

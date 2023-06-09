@@ -29,6 +29,15 @@
     &__definition {
         font-size: clamp(1.25rem, 5vw, 1.5rem);
     }
+
+    &__word a {
+        transition: color 0.5s ease-out;
+        color: var(--main-color);
+
+        &:hover {
+            color: var(--primary-purple);
+        }
+    }
 }
 
 @media (min-width: 780px) {

@@ -1,10 +1,10 @@
-<div *ngIf="words && phrases" class="daily-word-and-phrase container">
+<div *ngIf="word && phrase" class="daily-word-and-phrase container">
     <div @enterSlideInRight class="card">
         <h2 class="card__title">Bir Kelime</h2>
-        <div class="card--inner" *ngFor="let word of words">
+        <div class="card--inner">
             <div class="card__word">
                 <h3>
-                    {{word.madde}}
+                    <a [routerLink]="word.madde">{{word.madde}}</a>
                 </h3>
             </div>
             <div class="card__definition">
@@ -16,10 +16,10 @@
     </div>
     <div @enterSlideInLeft class="card">
         <h2 class="card__title">Bir Deyim-Atasözü</h2>
-        <div class="card--inner" *ngFor="let phrase of phrases">
+        <div class="card--inner">
             <div class="card__word">
                 <h3>
-                    {{phrase.madde}}
+                    <a [routerLink]="phrase.madde">{{phrase.madde}}</a>
                 </h3>
             </div>
             <div class="card__definition">
