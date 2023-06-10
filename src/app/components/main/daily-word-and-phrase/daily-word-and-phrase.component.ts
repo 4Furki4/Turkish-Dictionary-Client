@@ -1,6 +1,6 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, Host, HostListener, Input } from '@angular/core';
-import { Kelime, Atasoz } from 'src/app/models/home-content-response';
+import { Kelime, Atasoz, Karistirma, Syyd } from 'src/app/models/home-content-response';
 const enterSlideInRight = trigger('enterSlideInRight', [
   transition(':enter', [
     style({ opacity: 0, transform: 'translateX(-10%)' }),
@@ -25,13 +25,12 @@ export class DailyWordAndPhraseComponent {
   }
   position: number = 0;
   scrollToTop() {
-    const isPortrait = window.innerWidth < window.innerHeight;
-    if (isPortrait) {
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-      }, 100)
-    }
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, 100)
   }
   @Input('kelime') word!: Kelime
   @Input('atasozu') phrase!: Atasoz;
+  @Input('karistirilanSozcuk') wordConfusedWith!: Karistirma | undefined;
+  @Input('sikcaYanlisYazilanlar') frequentlyMisspelledWords!: Syyd[];
 }

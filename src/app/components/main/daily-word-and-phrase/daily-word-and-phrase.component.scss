@@ -38,6 +38,10 @@
             color: var(--primary-purple);
         }
     }
+
+    & .misspelled {
+        color: red;
+    }
 }
 
 @media (min-width: 780px) {

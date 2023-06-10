@@ -29,4 +29,27 @@
             </div>
         </div>
     </div>
+
+    <ng-container *ngIf="wordConfusedWith">
+        <div @enterSlideInRight class="card">
+            <h2>Birbiriyle Sıkça Karıştırılan Kelimeler</h2>
+            <p>
+                <a (click)="scrollToTop()" [routerLink]="wordConfusedWith.dogru">{{wordConfusedWith.dogru}}</a>
+                ile
+                <a (click)="scrollToTop()" [routerLink]="wordConfusedWith.yanlis">{{wordConfusedWith.yanlis}}</a>
+            </p>
+        </div>
+    </ng-container>
+
+    <div @enterSlideInLeft class="card">
+        <h2>Sıkça Yapılan Yanlışlara Doğrular</h2>
+        <ng-container *ngFor="let frequentlyMisspelledWord of frequentlyMisspelledWords">
+            <p>
+                <a (click)="scrollToTop()"
+                    [routerLink]="frequentlyMisspelledWord.dogrukelime">{{frequentlyMisspelledWord.dogrukelime}}</a>
+                -
+                <span class="misspelled">{{frequentlyMisspelledWord.yanliskelime}}</span>
+            </p>
+        </ng-container>
+    </div>
 </div>
