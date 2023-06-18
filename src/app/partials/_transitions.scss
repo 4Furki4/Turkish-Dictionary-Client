@@ -1,50 +1,50 @@
 .switch,
 .search .search__input,
 .search .search__button {
-  transition: background-color 0.5s ease-out;
+  transition: background-color var(--primary-transition-duration) ease-out;
 }
 
 .nav {
-  transition: box-shadow 0.5s ease-out, background-color 0.5s ease-out;
+  transition: box-shadow var(--primary-transition-duration) ease-out, background-color var(--primary-transition-duration) ease-out;
 }
 
 .definition {
-  transition: background-color 0.5s ease-out, color .5s ease-out;
+  transition: background-color var(--primary-transition-duration) ease-out, color .5s ease-out;
 
   &__title {
-    transition: border .5s ease-out;
+    transition: border var(--primary-transition-duration) ease-out;
   }
 
   &__meaning {
-    transition: border-color .5s ease-out;
+    transition: border-color var(--primary-transition-duration) ease-out;
   }
 }
 
 .card {
-  transition: background-color .5s ease-out;
+  transition: background-color var(--primary-transition-duration) ease-out;
 
   &__title {
-    transition: border .5s ease-out, color .5s ease-out;
+    transition: border var(--primary-transition-duration) ease-out, color var(--primary-transition-duration) ease-out;
   }
 }
 
 .slider::after {
-  transition: transform 0.5s ease-out;
+  transition: transform var(--primary-transition-duration) ease-out;
 
 }
 
 .search__input__validation-message {
-  transition: opacity 0.25s ease-out;
+  transition: opacity var(--secondary-transition-duration) ease-out;
 }
 
 .nav__dropdown {
-  transition: background-color .5s ease-out;
+  transition: background-color var(--primary-transition-duration) ease-out;
 }
 
 .nav__dropdown__list {
-  transition: background-color .5s ease-out;
+  transition: background-color var(--primary-transition-duration) ease-out;
 
   &__item {
-    transition: color 0.5s ease-out;
+    transition: color var(--primary-transition-duration) ease-out;
   }
 }

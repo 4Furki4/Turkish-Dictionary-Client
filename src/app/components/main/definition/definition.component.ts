@@ -2,6 +2,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, map, of, switchMap } from 'rxjs';
+import { environment } from 'src/app/environments/environment';
+import VoiceCodeResponse from 'src/app/models/voice-code-response';
 import { WordErrorResponse } from 'src/app/models/word-error-response';
 import { WordResponse } from 'src/app/models/word-response';
 import { WordRequestService } from 'src/app/services/word-request.service';
@@ -35,6 +37,12 @@ export class DefinitionComponent implements OnInit {
   words !: WordResponse[];
   wordErrorResponse = new WordErrorResponse();
   anlamList: Array<string[]> = [];
+  voiceSource !: string | undefined;
+  playSound() {
+    if (!this.voiceSource) return
+    const audio = new Audio(this.voiceSource);
+    audio.play();
+  }
   searchedWord = this.activatedRoute.paramMap.pipe(
     map((param) => param.get('word')!),
     switchMap((word) => {
@@ -42,6 +50,11 @@ export class DefinitionComponent implements OnInit {
       word = word.toLowerCase()
       return of(word)
     })).subscribe((word) => {
+      this.wordService.requestVoiceCode(word).subscribe((responses) => {
+        const voiceCode = responses.filter((response) => response.seskod).at(0)?.seskod
+        this.voiceSource = voiceCode ? `${environment.apiUrl}/ses/${voiceCode}.wav` : undefined
+      }
+      )
       this.wordService.requestWordMeaning(word).subscribe((response: WordResponse[] | WordErrorResponse) => {
         this.loadWordDefinition(response)
         this.isRendering = false

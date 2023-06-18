@@ -6,28 +6,38 @@
                     {{word.madde }}
                 </h1>
                 <ng-container *ngIf="word.cogul_mu ==='1' || word.telaffuz || word.lisan">
-                    <p class="definition__types">
-                        <i *ngIf="word.cogul_mu === '1'">
-                            Çokluk,
-                        </i>
-                        <i *ngIf="word.telaffuz">
-                            ({{word.telaffuz}}),
-                        </i>
-                        <i>
-                            {{word.lisan}}
-                        </i>
-                    </p>
+                    <div class="definition__types">
+                        <p>
+                            <i *ngIf="word.cogul_mu === '1'">
+                                Çokluk,
+                            </i>
+                            <i *ngIf="word.telaffuz">
+                                ({{word.telaffuz}}),
+                            </i>
+                            <i>
+                                {{word.lisan}}
+                            </i>
+                        </p>
+                        <ng-container *ngIf="voiceSource">
+                            <div class="definition__play-button--wrapper">
+                                <button (click)="playSound()" class="definition__play-button">
+
+                                </button>
+                            </div>
+                        </ng-container>
+                    </div>
                 </ng-container>
             </div>
             <ng-container *ngFor="let anlam of anlamList[wordIndex]; let anlamIndex = index">
                 <div class="definition__meaning">
                     <ng-container *ngIf="word.anlamlarListe[anlamIndex]">
-                        <p class="definition__types">
+                        <p class="definition__meaning__types">
                             {{anlamIndex+1}}.
-                            <i *ngIf="anlam">{{anlam}}:</i>
                             <i *ngIf="word.ozel_mi === '1'">
-                                <span>, özel</span>
+                                <span>özel, </span>
                             </i>
+                            <i *ngIf="anlam">{{anlam}}:</i>
+
                             {{ word.anlamlarListe[anlamIndex].anlam }}
                         </p>
                         <ng-container *ngIf="word.anlamlarListe[anlamIndex].orneklerListe">
