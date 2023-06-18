@@ -1,0 +1,247 @@
+.switch,
+.search .search__input,
+.search .search__button {
+  transition: background-color 0.5s ease-out;
+}
+
+.nav {
+  transition: box-shadow 0.5s ease-out, background-color 0.5s ease-out;
+}
+
+.definition {
+  transition: background-color 0.5s ease-out, color 0.5s ease-out;
+}
+.definition__title {
+  transition: border 0.5s ease-out;
+}
+.definition__meaning {
+  transition: border-color 0.5s ease-out;
+}
+
+.card {
+  transition: background-color 0.5s ease-out;
+}
+.card__title {
+  transition: border 0.5s ease-out, color 0.5s ease-out;
+}
+
+.slider::after {
+  transition: transform 0.5s ease-out;
+}
+
+.search__input__validation-message {
+  transition: opacity 0.25s ease-out;
+}
+
+.nav__dropdown {
+  transition: background-color 0.5s ease-out;
+}
+
+.nav__dropdown__list {
+  transition: background-color 0.5s ease-out;
+}
+.nav__dropdown__list__item {
+  transition: color 0.5s ease-out;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("../../assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../../assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../../assets/fonts/Roboto/Roboto-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../../assets/fonts/Roboto/Roboto-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../../assets/fonts/Roboto/Roboto-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../../assets/fonts/Roboto/Roboto-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../../assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../../assets/fonts/Roboto/Roboto-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../../assets/fonts/Roboto/Roboto-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../../assets/fonts/Roboto/Roboto-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../../assets/fonts/Roboto/Roboto-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../../assets/fonts/Roboto/Roboto-ThinItalic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto Mono;
+  src: url("../../assets/fonts/Roboto_Mono/static/RobotoMono-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto Mono;
+  src: url("../../assets/fonts/Roboto_Mono/static/RobotoMono-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto Mono;
+  src: url("../../assets/fonts/Roboto_Mono/static/RobotoMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto Mono;
+  src: url("../../assets/fonts/Roboto_Mono/static/RobotoMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto Mono;
+  src: url("../../assets/fonts/Roboto_Mono/static/RobotoMono-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto Mono;
+  src: url("../../assets/fonts/Roboto_Mono/static/RobotoMono-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto Mono;
+  src: url("../../assets/fonts/Roboto_Mono/static/RobotoMono-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto Mono;
+  src: url("../../assets/fonts/Roboto_Mono/static/RobotoMono-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: Inconsolata;
+  font-style: normal;
+  font-weight: 400;
+  src: local(Inter), url(../../assets/fonts/Inconsolata/Inconsolata-Regular.ttf) format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: Inconsolata;
+  font-style: normal;
+  font-weight: 700;
+  src: local(Inter), url(../../assets/fonts/Inconsolata/Inconsolata-Bold.ttf) format("truetype");
+  font-display: swap;
+}
+/* You can add global styles to this file, and also import other style files */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg-color: rgba(238, 238, 238, 97%);
+  --main-color: #0f0f0f;
+  --grey: #393E46;
+  --color-scheme: light;
+  --secondary-bg-color: #f5f5f5;
+  --primary-purple: #a545ef;
+  --font-family: sans-serif;
+  --primary-shadow-color: var(--grey);
+  --card-shadow: none;
+  --navbar-shadow: 0px 1px 5px 0px var(--primary-shadow-color);
+  --navbar-bg: var(--main-bg-color);
+  --radius-size: 10px;
+}
+
+.dark-mode {
+  --main-bg-color: #0f0f0f;
+  --main-color: rgba(238, 238, 238, 87%);
+  --secondary-bg-color: #1f1f1f;
+  --color-scheme: dark;
+  --primary-shadow-color: var(--secondary-bg-color);
+  --card-shadow: none;
+  --navbar-shadow: 0px 1px 1px 0px var(--primary-shadow-color);
+  --navbar-bg: var(--main-bg-color);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-bg-color);
+  color: var(--main-color);
+  color-scheme: var(--color-scheme);
+  transition: background-color 0.5s ease-out, color 0.5s ease-out;
+  font-family: var(--font-family);
+}
+
+.container {
+  width: min(1200px, 90%);
+  margin-inline: auto;
+}/*# sourceMappingURL=styles.css.map */

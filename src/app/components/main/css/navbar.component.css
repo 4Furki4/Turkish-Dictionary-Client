@@ -1,0 +1,105 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--navbar-bg);
+  box-shadow: var(--navbar-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+.nav--wrapper {
+  width: min(98%, 1200px);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.nav__settings {
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.nav__dropdown {
+  padding: 0.25rem 1rem;
+  border-right: 1px solid rgb(117, 117, 117);
+  position: relative;
+  min-width: 155px;
+}
+.nav__dropdown__selected {
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.nav__dropdown__selected #selected__font {
+  margin-right: 0.5rem;
+}
+.nav__dropdown__list {
+  list-style: none;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  right: 5px;
+  transform: scaleY(0);
+  opacity: 0;
+  transform-origin: top;
+  z-index: 99;
+  position: absolute;
+  background: var(--secondary-bg-color);
+  transition: transform 0.5s, opacity 0.5s;
+}
+.nav__dropdown__list__item {
+  margin-bottom: 0.5rem;
+  display: block;
+  cursor: pointer;
+}
+.nav__dropdown__list__item:hover {
+  color: var(--primary-purple);
+}
+.nav__dropdown__list.active {
+  display: grid;
+  transform: scaleY(1);
+  opacity: 1;
+  gap: 0.5rem;
+}
+.nav__dark-toggler {
+  display: flex;
+  gap: 0.5rem;
+}
+.nav .switch {
+  position: relative;
+  font-size: 17px;
+  display: inline-block;
+  width: 65px;
+  height: 26px;
+  border-radius: 100px;
+  background-color: #757575;
+}
+.nav .switch:hover {
+  background-color: var(--primary-purple);
+}
+.nav .switch input[type=checkbox] {
+  display: none;
+}
+.nav .switch .slider {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+.nav .switch .slider::after {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  inset: 0;
+  margin: auto 0;
+  transform: translateX(5px);
+  content: "";
+  background-color: var(--main-bg-color);
+}
+.nav .switch input:checked + .slider::after {
+  transform: translateX(40px);
+}/*# sourceMappingURL=navbar.component.css.map */

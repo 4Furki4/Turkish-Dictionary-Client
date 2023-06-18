@@ -1,0 +1,43 @@
+.daily-word-and-phrase {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  justify-content: space-around;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
+}
+
+.card {
+  border-radius: var(--radius-size);
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  padding: 2rem 1rem;
+  background-color: var(--secondary-bg-color);
+}
+.card__title {
+  margin: 0;
+  padding-bottom: 10px;
+  font-weight: 700;
+  background: -webkit-linear-gradient(45deg, var(--primary-purple) 10%, var(--main-color) 90%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 2px solid var(--main-bg-color);
+}
+.card__definition {
+  font-size: clamp(1.25rem, 5vw, 1.5rem);
+}
+.card__word a {
+  transition: color 0.5s ease-out;
+  color: var(--main-color);
+}
+.card__word a:hover {
+  color: var(--primary-purple);
+}
+
+@media (min-width: 780px) {
+  .daily-word-and-phrase {
+    grid-template-columns: repeat(2, minmax(300px, 600px));
+  }
+}/*# sourceMappingURL=daily-word-and-phrase.component.css.map */

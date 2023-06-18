@@ -1,0 +1,49 @@
+.definition {
+  padding-inline: clamp(0.25rem, 2vw, 1rem);
+  padding-block: clamp(1rem, 2vw, 4rem);
+  box-shadow: var(--card-shadow);
+  background-color: var(--secondary-bg-color);
+  font-size: clamp(1rem, 5vw, 1.75rem);
+  border-radius: var(--radius-size);
+  color: var(--main-color);
+}
+.definition__title, .definition__example, .definition--error {
+  text-align: center;
+}
+.definition__item:not(:first-child) {
+  border-top: 2px solid var(--main-bg-color);
+}
+.definition__title {
+  margin: 0;
+  padding-bottom: 0.5rem;
+}
+.definition__types {
+  padding: 0rem 1rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.definition__play-button--wrapper {
+  position: relative;
+  margin-left: auto;
+  border-radius: 100%;
+  aspect-ratio: 1;
+  background-color: var(--primary-purple);
+}
+.definition__play-button {
+  position: absolute;
+  border-style: solid;
+  border-width: 12px 12px 12px 24px;
+  cursor: pointer;
+  background-color: transparent;
+  width: 0;
+  height: 0;
+  border-color: transparent transparent transparent yellow;
+}
+.definition__meaning {
+  margin-block: 2rem;
+}
+.definition__example {
+  font-size: clamp(0.5rem, 4vw, 1.5rem);
+  margin: 0.25rem 1rem 1rem 1rem;
+}/*# sourceMappingURL=definition.component.css.map */

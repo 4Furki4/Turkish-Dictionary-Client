@@ -27,14 +27,61 @@
     &__types {
         padding: 0rem 1rem;
         margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    &__play-button--wrapper {
+        position: relative;
+        margin-left: auto;
+        border-radius: 100%;
+        aspect-ratio: 1;
+        background-color: var(--secondary-purple);
+        padding: 1.5rem;
+    }
+
+    &__play-button {
+        position: absolute;
+        border-style: solid;
+        border-width: 10px 10px 10px 20px;
+        cursor: pointer;
+        background-color: transparent;
+        width: 0;
+        height: 0;
+        border-color: transparent transparent transparent var(--primary-purple);
+        transform: translate(-9px, -10px);
+        transition: border-color var(--primary-transition-duration) ease-out;
+
+        &:hover {
+            border-color: transparent transparent transparent #6f07be;
+        }
     }
 
     &__meaning {
         margin-block: 2rem;
+
+        &__types {
+            padding: 0rem 1rem;
+        }
     }
 
     &__example {
         font-size: clamp(.5rem, 4vw, 1.5rem);
         margin: .25rem 1rem 1rem 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .definition {
+        &__play-button--wrapper {
+            padding: 1.1rem;
+
+
+        }
+
+        &__play-button {
+            border-width: 7px 7px 7px 14px;
+            transform: translate(-6px, -7px);
+        }
     }
 }
