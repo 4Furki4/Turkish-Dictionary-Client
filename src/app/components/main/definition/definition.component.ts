@@ -37,10 +37,12 @@ export class DefinitionComponent implements OnInit {
   words !: WordResponse[];
   wordErrorResponse = new WordErrorResponse();
   anlamList: Array<string[]> = [];
-  voiceSource !: string | undefined;
-  playSound() {
-    if (!this.voiceSource) return
-    const audio = new Audio(this.voiceSource);
+  voiceCodesAndWords !: any[]
+  playSound(word: string) {
+    if (!this.voiceCodesAndWords) return
+    const relatedVoiceCode = this.voiceCodesAndWords.find((item) => item.word === word).voiceCode;
+    const relatedSource = `${environment.apiUrl}/ses/${relatedVoiceCode}.wav`
+    const audio = new Audio(relatedSource);
     audio.play();
   }
   searchedWord = this.activatedRoute.paramMap.pipe(
@@ -51,8 +53,12 @@ export class DefinitionComponent implements OnInit {
       return of(word)
     })).subscribe((word) => {
       this.wordService.requestVoiceCode(word).subscribe((responses) => {
-        const voiceCode = responses.filter((response) => response.seskod).at(0)?.seskod
-        this.voiceSource = voiceCode ? `${environment.apiUrl}/ses/${voiceCode}.wav` : undefined
+        this.voiceCodesAndWords = responses.filter((response) => response.seskod).map((filteredResponse) => {
+          return {
+            word: filteredResponse.sozu.trim(),
+            voiceCode: filteredResponse.seskod
+          }
+        })
       }
       )
       this.wordService.requestWordMeaning(word).subscribe((response: WordResponse[] | WordErrorResponse) => {
@@ -81,6 +87,7 @@ export class DefinitionComponent implements OnInit {
         this.anlamList.push(anlamOzellikListe)
       })
       this.words = response
+      console.log(this.words);
     }
   }
 }

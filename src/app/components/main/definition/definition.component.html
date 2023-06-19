@@ -5,7 +5,7 @@
                 <h1 class="definition__title">
                     {{word.madde }}
                 </h1>
-                <ng-container *ngIf="word.cogul_mu ==='1' || word.telaffuz || word.lisan">
+                <ng-container *ngIf="word.cogul_mu ==='1' || word.telaffuz || word.lisan || voiceCodesAndWords">
                     <div class="definition__types">
                         <p>
                             <i *ngIf="word.cogul_mu === '1'">
@@ -18,9 +18,9 @@
                                 {{word.lisan}}
                             </i>
                         </p>
-                        <ng-container *ngIf="voiceSource">
+                        <ng-container *ngIf="voiceCodesAndWords">
                             <div class="definition__play-button--wrapper">
-                                <button (click)="playSound()" class="definition__play-button">
+                                <button (click)="playSound(word.madde)" class="definition__play-button">
 
                                 </button>
                             </div>
