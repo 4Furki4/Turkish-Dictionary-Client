@@ -6,6 +6,7 @@ import { MainModule } from './components/main/main.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CachingInterceptor } from './services/interceptors/caching.interceptor';
+import { ForbiddenInterceptor } from './services/interceptors/forbidden.interceptor';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,11 @@ import { CachingInterceptor } from './services/interceptors/caching.interceptor'
     {
       provide: HTTP_INTERCEPTORS,
       useClass: CachingInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ForbiddenInterceptor,
       multi: true
     }
   ],
