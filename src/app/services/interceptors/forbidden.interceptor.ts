@@ -14,8 +14,9 @@ export class ForbiddenInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    if(request.url.includes('türkiyeli')) { // return 403 forbidden if the request url contains 'türkiyeli'
-      return next.handle(request.clone({ url: environment.apiUrl+'/gts?ara=türk'}))
+    if(request.url.includes('türkiyeli')) { // redirect to türk
+      request = request.clone({
+        url: request.url.replace('türkiyeli', 'türk')})
     }
     return next.handle(request);
   }

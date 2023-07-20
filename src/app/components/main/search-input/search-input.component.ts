@@ -24,8 +24,12 @@ const shadowAnimation = trigger('animateShadow', [
   animations: [shadowAnimation]
 })
 export class SearchInputComponent {
+  forbiddenWords : {
+    [key: string]: string
+  } = {
+    'türkiyeli': 'türk',
+  }
   constructor(private route: Router) {
-
   }
   @ViewChild("searchForm") searchForm!: NgForm;
   @ViewChild("inputEl") wordInputEl!: HTMLInputElement;
@@ -34,6 +38,9 @@ export class SearchInputComponent {
   onSubmit() {
     if (this.isInputValueValid) {
       let cleansedWord = this.wordInput.toLowerCase().trim()
+      if (this.forbiddenWords[cleansedWord]) {
+        cleansedWord = this.forbiddenWords[cleansedWord]
+      }
       this.route.navigate([`${cleansedWord}`])
       return true
     }
