@@ -20,10 +20,12 @@
         padding-bottom: 10px;
         // font-size: clamp(1.5rem, 5vw, 2.5rem);
         font-weight: 700;
-        background: -webkit-linear-gradient(45deg, var(--primary-purple) 10%, var(--main-color)90%);
+        background: -webkit-linear-gradient(45deg, var(--primary-purple) 10%, var(--gradient-purple)90%);
+        background-size: 300% 300%;
         background-clip: text;
         -webkit-text-fill-color: transparent;
         border-bottom: 2px solid var(--main-bg-color);
+        animation: flowingGradient 2.5s ease infinite;
     }
 
     &__definition {
@@ -31,17 +33,27 @@
     }
 
     &__word a {
-        transition: color 0.5s ease-out;
-        color: var(--main-color);
-
-        &:hover {
-            color: var(--primary-purple);
-        }
+        text-decoration: none;
+        color: var(--primary-purple);
     }
 }
 
 @media (min-width: 780px) {
     .daily-word-and-phrase {
         grid-template-columns: repeat(2, minmax(300px, 600px));
+    }
+}
+
+@keyframes flowingGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
     }
 }
