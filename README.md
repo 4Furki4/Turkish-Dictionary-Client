@@ -28,6 +28,7 @@
 <p align="center">
   <img src="https://github.com/4Furki4/Turkish-Dictionary-Client/assets/84590614/3687064a-4583-49d3-b06c-28163704fbba">
   <img src="https://github.com/4Furki4/Turkish-Dictionary-Client/assets/84590614/96370d96-837e-45bc-b541-c9ffcdfa56ed">
+  <img src="https://github.com/4Furki4/Turkish-Dictionary-Client/assets/84590614/2d3a8411-796c-47f7-92e7-ee82376e8766">
 </p>
 
 
